@@ -1,2 +1,0 @@
-fruit = ['orange', 'apple', 'pear, 'banana', 'kiwi', 'apple']
-type(fruit)
