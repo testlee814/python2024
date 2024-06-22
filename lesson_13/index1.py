@@ -15,13 +15,14 @@ st.markdown('<hr style="border:0;margin:0 auto;width:80%;border-top:2px dotted g
 st.markdown('<h6 style="color:purple;text-align:center">快看看自己的BMI是否在理想範圍吧!</h6>', 
             unsafe_allow_html=True)
 
-if 'bmi_result' not in st.session_state:
-    st.session_state.bmi_result = 0
+def clear():
+    st.session_state.height = 100
+    st.session_state.weight = 30
 
 with st.form('bmi form',border=False):
     height = st.slider(":green[Choose your height(cm)]",max_value=250,min_value=100,key="height")
     weight = st.number_input(":green[Choose your weight(kg)]",max_value=200,min_value=30,key="weight")
-    txt=''
+
     if st.form_submit_button("BMI calculator Go!"):
         st.session_state.bmi_result = round(weight/(height/100)**2,1)
         if st.session_state.bmi_result <18.5:
@@ -36,10 +37,10 @@ with st.form('bmi form',border=False):
             txt = "中度肥胖"
         else:
             txt = "重度肥胖"
-    
-st.markdown(f'## :red[{st.session_state.bmi_result}]')
-st.markdown(f'### :red[{txt}]')
+   
+st.form_submit_button
 
+st.markdown(f'## :red[{st.session_state.bmi_result}]')
 
  
 st.session_state
