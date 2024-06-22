@@ -32,7 +32,7 @@ with st.form('bmi form',border=False):
             txt = "過重"
         elif st.session_state.bmi_result < 30:
             txt = "輕度肥胖"
-        elif bmi_rest.session_state.bmi_resultsult < 35:
+        elif st.session_state.bmi_resultsult < 35:
             txt = "中度肥胖"
         else:
             txt = "重度肥胖"

@@ -15,6 +15,9 @@ st.markdown('<hr style="border:0;margin:0 auto;width:80%;border-top:2px dotted g
 st.markdown('<h6 style="color:purple;text-align:center">快看看自己的BMI是否在理想範圍吧!</h6>', 
             unsafe_allow_html=True)
 
+if 'bmi_result' not in st.session_state:
+    st.session_state.bmi_result = 0
+    
 def clear():
     st.session_state.height = 100
     st.session_state.weight = 30
@@ -33,12 +36,12 @@ with st.form('bmi form',border=False):
             txt = "過重"
         elif st.session_state.bmi_result < 30:
             txt = "輕度肥胖"
-        elif bmi_rest.session_state.bmi_resultsult < 35:
+        elif st.session_state.bmi_resultsult < 35:
             txt = "中度肥胖"
         else:
             txt = "重度肥胖"
    
-st.form_submit_button
+    st.form_submit_button("Clear all data!",on_click=clear)
 
 st.markdown(f'## :red[{st.session_state.bmi_result}]')
 
