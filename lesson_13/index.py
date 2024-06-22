@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.subheader("BMI calculator")
+st.subheader("BMI calculator-modify1")
 st.divider()
 st.latex( 'BMI calculator: BMI = weight(kg) / height^2(cm^2)')
 st.latex('For example, if you are 52 kg, height is 155 cm, then your BMI is:')
